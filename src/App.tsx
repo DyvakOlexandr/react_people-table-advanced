@@ -11,7 +11,7 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path=":param?" element={<HomePage />} />
-        <Route path="/people" element={<PeoplePage />}>
+        <Route path="people" element={<PeoplePage />}>
           <Route
             path=":slug?"
             element={<PeopleContent loading={true} setLoading={() => {}} />}

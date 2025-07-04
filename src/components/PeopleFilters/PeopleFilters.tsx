@@ -20,7 +20,14 @@ export const PeopleFilters = () => {
           break;
         case 'centuries':
           if (centuries.includes(value.toString())) {
-            params.delete(param, value);
+            // If the value already exists, remove it
+            params.delete(param);
+          } else if (value === '') {
+            // If the value is empty, remove all centuries
+            params.delete(param);
+          } else if (centuries.length === 0) {
+            // If no centuries are set, add the first one
+            params.set(param, value);
           } else {
             params.append(param, value);
           }

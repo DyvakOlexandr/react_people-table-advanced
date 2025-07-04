@@ -1,4 +1,4 @@
-import NavLinks from '../NavLInks/NavLinks';
+import NavLinks from '../NavLinks/NavLinks';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
