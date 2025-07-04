@@ -14,7 +14,7 @@ export const App = () => {
         <Route path="people" element={<PeoplePage />}>
           <Route
             path=":slug?"
-            element={<PeopleContent loading={true} setLoading={() => {}} />}
+            element={<PeopleContent loading={false} setLoading={() => {}} />}
           />
         </Route>
         <Route path="*" element={<NotFound />} />

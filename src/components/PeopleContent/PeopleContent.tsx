@@ -88,31 +88,31 @@ const PeopleContent: React.FC<Props> = ({ loading, setLoading }) => {
       switch (sort) {
         case 'name':
           if (order === 'desc') {
-            return a.name.localeCompare(b.name);
+            return b.name.localeCompare(a.name);
           }
 
-          return b.name.localeCompare(a.name);
+          return a.name.localeCompare(b.name);
         case 'sex':
-          return a.sex === 'f' ? 1 : -1;
+          return b.sex === 'f' ? 1 : -1;
         case 'born':
           if (order === 'desc') {
-            return a.born - b.born;
+            return b.born - a.born;
           }
 
-          return b.born - a.born;
+          return a.born - b.born;
 
         case 'died':
           if (a.died && b.died) {
-            return order === 'desc' ? a.died - b.died : b.died - a.died;
-          } else if (a.died) {
-            return 1; // a has died, b has not
+            return order === 'desc' ? b.died - a.died : a.died - b.died;
           } else if (b.died) {
+            return 1; // a has died, b has not
+          } else if (a.died) {
             return -1; // b has died, a has not
           }
 
           return 0; // both have not died
         default:
-          return b.born - a.born;
+          return a.born - b.born;
       }
     });
 

@@ -20,8 +20,6 @@ export const PeopleFilters = () => {
           break;
         case 'centuries':
           if (centuries.includes(value.toString())) {
-            // If the value already exists, remove it
-            params.delete(param);
           } else if (value === '') {
             // If the value is empty, remove all centuries
             params.delete(param);
